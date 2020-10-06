@@ -1,4 +1,4 @@
-package com.github.saibo_creator.bootcamp.myapplication;
+package com.github.saibo_creator.bootcamp.sportstracker;
 
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
