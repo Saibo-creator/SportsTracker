@@ -61,4 +61,7 @@ public class NewRecordingFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_new_recording, container, false);
     }
+
+    public interface OnFragmentInteractionListener {
+    }
 }

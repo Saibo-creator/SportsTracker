@@ -52,35 +52,6 @@ public class MainActivity extends AppCompatActivity
         mViewPager.setAdapter(mSectionStatePagerAdapter);
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) { }
-
-//    private void setUserImageAndWelcomeMessage() {
-//        final InputStream imageStream;
-//        try {
-//            String imageFilePath=userProfile.photoPath;
-//            File imageFile = new File(imageFilePath);
-//
-//            imageStream = getContentResolver()
-//                    .openInputStream(Uri.fromFile(imageFile));
-//            final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-//            imageView = findViewById(R.id.userImage);
-//            imageView.setImageBitmap(selectedImage);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-
-//        TextView welcomeTextView = findViewById(R.id.welcomeText);
-//        welcomeTextView.setText("Welcome " + userProfile.username + "!");
-//    }
 
 
-
-//    private void sendProfileToWatch() {
-//        Intent intentWear = new Intent(MainActivity.this,WearService.class);
-//        intentWear.setAction(WearService.ACTION_SEND.PROFILE_SEND.name());
-//        intentWear.putExtra(WearService.PROFILE,userProfile);
-//        startService(intentWear);
-//    }
-//    }
 }

@@ -61,4 +61,7 @@ public class MyHistoryFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_my_history, container, false);
     }
+
+    public interface OnFragmentInteractionListener {
+    }
 }

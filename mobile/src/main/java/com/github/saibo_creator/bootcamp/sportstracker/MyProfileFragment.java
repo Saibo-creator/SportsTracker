@@ -17,21 +17,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link MyProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class MyProfileFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public Profile userProfile;
     public View fragmentView;
@@ -40,23 +29,6 @@ public class MyProfileFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment MyProfileFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static MyProfileFragment newInstance(String param1, String param2) {
-        MyProfileFragment fragment = new MyProfileFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,7 +37,7 @@ public class MyProfileFragment extends Fragment {
         fragmentView = inflater.inflate(R.layout.fragment_my_profile,
                 container, false);
         Intent intent = getActivity().getIntent();
-        Profile userProfile = (Profile) intent.getSerializableExtra("userProfileWelcome");
+        userProfile = (Profile) intent.getSerializableExtra("userProfile");
         setUserImageAndWelcomeMessage();
         sendProfileToWatch();
 
@@ -88,7 +60,7 @@ public class MyProfileFragment extends Fragment {
             imageStream =  getActivity().getContentResolver()
                     .openInputStream(Uri.fromFile(imageFile));
             final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-            ImageView imageView =  getActivity().findViewById(R.id.userImage);
+            ImageView imageView =  fragmentView.findViewById(R.id.userImage);
             imageView.setImageBitmap(selectedImage);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -96,6 +68,6 @@ public class MyProfileFragment extends Fragment {
     }
 
 
-
-
+    public interface OnFragmentInteractionListener {
+    }
 }
