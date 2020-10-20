@@ -15,7 +15,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 public class MainActivity extends WearableActivity {
-    private TextView mTextView;
+
+    public static final String ACTION_RECEIVE_PROFILE_INFO = "RECEIVE_PROFILE_INFO";
+    public static final String PROFILE_IMAGE = "PROFILE_IMAGE";
+    public static final String PROFILE_USERNAME = "PROFILE_USERNAME";
     private ConstraintLayout mLayout;
 
 

@@ -22,8 +22,9 @@ android {
         buildTypes.each {
             project.ext.constants.each {
                 k, v ->
-                        it.buildConfigField 'String', "W_${k}", "\"${v}\""
-                it.resValue 'string', "W_${k}", v
+                    it.buildConfigField 'String', "W_${k}", "\"${v}\""// Add these config Field to BuildConfig file
+                    it.resValue 'string', "W_${k}", v// make them available in the res:getString(R.string.W_a_key)`
+                    //https://www.tanelikorri.com/tutorial/android/set-variables-in-build-gradle/
             }
         }
     }
